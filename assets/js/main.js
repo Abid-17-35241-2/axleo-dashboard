@@ -1,29 +1,6 @@
 (function ($) {
 	"use strict";
-	// Preloader 
-	jQuery(window).on('load', function () {
-		$(".preloader").delay(1600).fadeOut("slow");
-	});
 
-	$('.sidebar-button').on("click", function () {
-        $(this).toggleClass('active');
-    });
-
-	document.querySelector('.sidebar-button').addEventListener('click', () =>
-		document.querySelector('.main-menu').classList.toggle('show-menu'));
-
-	$('.menu-close-btn').on("click", function () {
-		$('.main-menu').removeClass('show-menu');
-	});
-
-
-	// Sidebar 
-	$('.sidebar-btn').on("click", function () {
-		$('.sidebar-area').addClass('active');
-	});
-	$('.sidebar-menu-close').on("click", function () {
-		$('.sidebar-area').removeClass('active');
-	});
 
 	jQuery('.dropdown-icon').on('click', function () {
 		jQuery(this).toggleClass('active').next('ul').slideToggle();
