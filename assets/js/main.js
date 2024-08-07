@@ -20,11 +20,15 @@
 	});
 
 	// sidebar
-	$('.right-sidebar-button').on("click", function () {
-		$('.right-sidebar-menu').addClass('show-right-menu');
+	$('.sidebar-button').on("click", function () {
+		$(this).toggleClass('active');
 	});
-	$('.right-sidebar-close-btn').on("click", function () {
-		$('.right-sidebar-menu').removeClass('show-right-menu');
+	
+	$('.sidebar-button').on("click", function(){
+		$('.dashboard-sidebar-wrapper').toggleClass('slide');
+		$('.dashboard-header').toggleClass('slide');
+		$('.main-content').toggleClass('slide');
+		$('.dashboard-footer').toggleClass('slide');   
 	});
 
 	//Counter up

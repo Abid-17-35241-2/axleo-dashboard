@@ -2061,3 +2061,536 @@ header.style-1 {
     }
   }
 }
+/*=====================================
+ 04. Dashboard CSS 
+========================================*/
+.dashboard-header{
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--white-color);
+  padding: 20px 80px;
+  display: flex;
+  justify-content: end;
+  margin-left: 305px;
+  max-width: calc(100% - 305px);
+  width: 100%;
+  @include seventeen-down-device(){
+    margin-left: 270px;
+    max-width: calc(100% - 270px);
+    padding: 20px 60px;
+  }
+  @include xxl-device(){
+    margin-left: 235px;
+    max-width: calc(100% - 235px);
+    padding: 20px 40px;
+  }
+  @include xxl-down-device(){
+    padding: 20px 40px;
+  }
+  @include lg-down-device(){
+    justify-content: space-between;
+    margin-left: 0; 
+    max-width: 100%;
+    padding: 20px 30px;
+  }
+  @include md-down-device(){
+    padding: 20px 15px;
+  }
+  .header-logo{
+    @include md-down-device(){
+      img{
+        width: 150px;
+      }
+    }
+  }
+  .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include md-down-device(){
+      gap: 20px;
+    }
+    .notification-and-profile-area{
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      @include xxl-device(){
+        gap: 50px;
+      }
+      @include xxl-down-device(){
+        gap: 50px;
+      }
+      .notification-area{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @include md-down-device(){
+          display: none;
+        }
+        li{
+          svg{
+            fill: var(--title-color);
+          }
+        }
+      }
+      .profile-area{
+        display: flex;
+        gap: 14px;
+        .profile-img{
+          img{
+            min-width: 44px;
+            max-width: 44px;
+            height: 44px;
+            border-radius: 50%;
+          }
+        }
+        .profile-content{
+          @include sm-down-device(){
+            display: none;
+          }
+          h6{
+            color: var(--title-color);
+            font-family: var(--font-unbounded);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+            svg{
+              stroke: var(--title-color);
+            }
+          }
+          a{
+            color: var(--paragraph-color);
+            font-family: var(--font-unbounded);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+    .mobile-menu-btn{
+      svg{
+        fill: var(--title-color);
+      }
+    }
+  }
+}
+.dashboard-wrapper{
+  .dashboard-sidebar-wrapper{
+    transition: all 0.8s ease-out 0s;
+    background: #16191E;
+    padding: 20px 25px;
+    max-width: 305px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    @include seventeen-down-device(){
+      max-width: 270px;
+    }
+    @include xxl-device(){
+      max-width: 235px;
+      padding: 20px 18px;
+    }
+    @include xl-device(){
+      max-width: 220px;
+      padding: 20px 15px;
+    }
+    @include xl-down-device(){
+      max-width: 200px;
+      padding: 20px 15px;
+    }
+    @include lg-down-device(){
+      left: -100%;
+      &.slide{
+        left: 0;
+      }
+    }
+    @include sm-down-device(){
+      max-width: 180px;
+    }
+    .dashboard-sidebar-logo{
+      padding-bottom: 105px;
+      display: flex;
+      justify-content: center;
+    }
+    .dashboard-sidebar-menu{
+      >ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li{
+          a{
+            color: var(--white-color);
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            @include xxl-device(){
+              padding: 15px 18px;
+            }
+            @include xxl-down-device(){
+              padding: 15px 18px;
+            }
+            @include xl-down-device(){
+              flex-direction: column;
+            }
+            svg{
+              fill: var(--primary-color);
+              min-width: 18px;
+              @include md-down-device(){
+                width: 25px;
+                height: 25px;
+              }
+            }
+            h6{
+              color: var(--white-color);
+              font-family: var(--font-unbounded);
+              font-size: 15px;
+              font-weight: 500;
+              margin-bottom: 0;
+              @include xxl-device(){
+                font-size: 14px;
+              }
+              @include xxl-down-device(){
+                font-size: 14px;
+              }
+            }
+          }
+          &.active{
+            a{
+              background-color: var(--primary-color);
+              border-radius: 5px;
+              svg{
+                fill: var(--title-color);
+              }
+              h6{
+                color: var(--title-color);
+              }
+            }
+          }
+        }
+      }
+      .logout{
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white-color);
+        white-space: nowrap;
+        padding: 20px 25px;
+        @include xxl-device(){
+          padding: 15px 18px;
+        }
+        @include xxl-down-device(){
+          padding: 15px 18px;
+        }
+        @include xl-down-device(){
+          flex-direction: column;
+        }
+        @include md-down-device(){
+          justify-content: center;
+        }
+        @include sm-down-device(){
+          padding: 15px 0;
+        }
+        svg{
+          fill: var(--primary-color);
+          @include md-down-device(){
+            width: 25px;
+            height: 25px;
+          }
+        }
+        h6{
+          color: var(--white-color);
+          font-family: var(--font-unbounded);
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1;
+          margin-bottom: 0;
+          @include xxl-device(){
+            font-size: 14px;
+          }
+          @include xxl-down-device(){
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .main-content{
+    background-color: #F0F0F0;
+    transition: all 0.8s ease-out 0s;
+    padding: 50px 80px;
+    margin-left: 305px;
+    max-width: calc(100% - 305px);
+    width: 100%;
+    @include seventeen-down-device(){
+      padding: 60px 30px;
+      margin-left: 270px;
+      max-width: calc(100% - 270px);
+    }
+    @include xxl-device(){
+      padding: 60px 20px;
+      margin-left: 235px;
+      max-width: calc(100% - 235px);
+    }
+    @include xl-device(){
+      margin-left: 220px;
+      max-width: calc(100% - 220px);
+      padding: 60px 15px;
+    }
+    @include xl-down-device(){
+      padding: 60px 20px;
+      margin-left: 200px;
+      max-width: calc(100% - 200px);
+    }
+    @include lg-down-device(){
+      max-width: calc(100%);
+      margin-left: 0;
+      // &.slide{
+      //   margin-left: 200px;
+      //   max-width: calc(100% - 200px);
+      // }
+    }
+    @include md-down-device(){
+      margin-left: 0px;
+      max-width: calc(100%);
+      
+    }
+    @include sm-down-device(){
+      padding: 40px 5px;
+      margin-left: 0px;
+      max-width: calc(100%);
+      overflow: hidden;
+    }
+    .counter-wrap{
+      background-image: url(../img/dashboard/main-content-counter-area-bg.png),linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(#fff, 1) 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 40px 50px;
+      border-radius: 20px;
+      @include xxl-device(){
+        padding: 40px;
+      }
+      @include xxl-down-device(){
+        padding: 40px 20px;
+      }
+      .title-and-profile{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        @include xxl-down-device(){
+          margin-bottom: 25px;
+        }
+        @include sm-down-device(){
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .title-area{
+          h3{
+            color: var(--title-color);
+            font-family: var(--font-unbounded);
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 37.2px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            @include xxl-device(){
+              font-size: 28px;
+            }
+            @include xxl-down-device(){
+              font-size: 25px;
+              margin-bottom: 5px;
+            }
+            @include sm-down-device(){
+              font-size: 22px;
+            }
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
+        }
+        .view-profile{
+          a{
+            color: var(--title-color);
+            font-family: var(--font-unbounded);
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 21px;
+            transition: 0.5s;
+            svg{
+              fill: var(--title-color);
+            }
+            &:hover{
+              background-color: var(--primary-color);
+              border-color: var(--primary-color);
+            }
+          }
+        }
+      }
+      .counter-area{
+        .counter-single{
+          background-color: #00BA6B;
+          border-radius: 10px;
+          padding: 35px 30px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          position: relative;
+          @include seventeen-down-device(){
+            padding: 35px 15px;
+            gap: 15px;
+          }
+          @include xxl-device(){
+            padding: 30px 15px;
+          }
+          @include xxl-down-device(){
+            padding: 25px 15px;
+            gap: 12px;
+          }
+          .counter-icon{
+            svg{
+              fill: var(--white-color);
+            }
+          }
+          .counter-content{
+            p{
+              color: var(--white-color);
+              font-family: var(--font-unbounded);
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4;
+              margin-bottom: 8px;
+            }
+            .number{
+              color: var(--white-color);
+              font-family: var(--font-unbounded);
+              font-size: 30px;
+              font-weight: 700;
+              line-height: 1;
+              display: flex;
+              align-items: center;
+              @include xl-device(){
+                font-size: 25px;
+              }
+              h3{
+                margin-bottom: 0;
+                color: var(--white-color);
+                font-family: var(--font-unbounded);
+                font-size: 30px;
+                font-weight: 700;
+                @include xl-device(){
+                  font-size: 25px;
+                }
+              }
+            }
+          }
+          &.two{
+            background: #3093EF;
+          }
+          &.three{
+            background: #F27C3A;
+          }
+        }
+      }
+    }
+    .add-mission-banner{
+      position: relative;
+      height: 100%;
+      @include lg-down-device(){
+        display: none;
+      }
+      img{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .banner-content{
+        padding: 40px 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        @include xxl-device(){
+          padding: 40px 30px;
+        }
+        @include xxl-down-device(){
+          padding: 35px 20px;
+        }
+        .title-area{
+          span{
+            color: var(--title-color);
+            font-family: var(--font-unbounded);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          h5{
+            color: var(--title-color);
+            font-family: var(--font-unbounded);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 0;
+            @include xxl-device(){
+              font-size: 20px;
+            }
+            @include xxl-down-device(){
+              font-size: 20px;
+            }
+          }
+        }
+        a{
+          color: var(--white-color);
+          font-family: var(--font-unbounded);
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 1;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 10px;
+          padding: 13px 22px;
+          background-color: #3065EF;
+          white-space: nowrap;
+          transition: 0.5s;
+          svg{
+            fill: var(--white-color);
+            transition: 0.5s;
+          }
+          &:hover{
+            background-color: var(--primary-color);
+            color: var(--title-color);
+            svg{
+              fill: var(--title-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
